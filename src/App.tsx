@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Input from './components/Input';
 
 const App: React.FC = () => {
+  const [value, setValue] = useState<string>('Hello!');
   return (
-    <h1 className="text-3xl font-bold underline text-red-600">
-      Simple React Typescript Tailwind Sample
-    </h1>
+    <Input 
+      value={value}
+      onChange={setValue}
+      title={value}
+      placeholder="hehehehe"
+    />
   );
 }
 
