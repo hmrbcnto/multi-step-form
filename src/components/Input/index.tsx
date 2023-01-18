@@ -19,15 +19,14 @@ const Input: React.FC<InputProps> = ({
 
   const errorClasses = status === 'error' ? 'border-red-600 bg-red-600 border-solid' : '';
   const baseClasses = twMerge(`
-    focus:border-marine_blue
+    focus:border-primary-marine_blue
     focus:border-solid
     text-base
-    border-cool_gray
-    md:h-auto
+    border-neutral-cool_gray
+    border-solid
+    border
     py-4
     px-3
-    lg:p-4
-    bg-grayscale-light-body
     flex
     justify-content
     box-border
@@ -43,8 +42,8 @@ const Input: React.FC<InputProps> = ({
   `)
 
   return (
-    <div className="flex flex-col items-start">
-      { title ? <span> {title} </span> : <></>}
+    <div className="flex flex-col items-start gap-2">
+      { title ? <span className="font-extrabold text-primary-marine_blue"> {title} </span> : <></>}
       <InputMask
         className={`${baseClasses}`}
         mask={mask}
