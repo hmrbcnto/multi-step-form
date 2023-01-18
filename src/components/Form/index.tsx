@@ -2,6 +2,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import { StepConstants } from '../../constants/Steps';
 import Steps from '../Steps';
+import InformationForm from './InformationForm';
 
 const Form: React.FC = () => {
   const formClasses = twMerge(`
@@ -13,6 +14,10 @@ const Form: React.FC = () => {
     drop-shadow-lg
     desktop:p-4 
     rounded-3xl
+    flex
+    flex-col
+    desktop:flex-row
+    desktop:gap-8
   `);
 
   return(
@@ -20,6 +25,7 @@ const Form: React.FC = () => {
       <Steps 
         steps={StepConstants}
       />
+      <InformationForm />
     </div>
   );
 };
