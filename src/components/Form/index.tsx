@@ -5,6 +5,7 @@ import Steps from '../Steps';
 import InformationForm from './InformationForm';
 import { useRegistrationForm } from '../../contexts/FormContext';
 import PlanForm from './PlanForm';
+import AddonForm from './AddOnForm';
 
 const Form: React.FC = () => {
   const { registration } = useRegistrationForm();
@@ -29,6 +30,8 @@ const Form: React.FC = () => {
         return <InformationForm />
       case 'plan':
         return <PlanForm />;
+      case 'add-ons':
+        return <AddonForm />;
       default:
         return <InformationForm />
     }
@@ -38,6 +41,7 @@ const Form: React.FC = () => {
     <div className={`${formClasses}`}>
       <Steps 
         steps={StepConstants}
+        activeStep={registration?.currentStep}
       />
       <div className="w-full mx-auto">
         {
