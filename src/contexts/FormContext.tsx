@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import { RegistrationForm, RegistrationFormContext } from './FormContext.types';
+import { AddonString, RegistrationForm, RegistrationFormContext, UpdateRegistrationFormType } from './FormContext.types';
 
 export const FormContext = React.createContext<RegistrationFormContext>({
   registration: {
-    currentStep: 'plan',
-    payment_option: 'yearly'
+    currentStep: 'information',
+    payment_option: 'monthly',
+    addOns: []
   }
 });
 
 export const FormProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [registration, setRegistration] = useState<RegistrationForm>({});
+  const [registration, setRegistration] = useState<RegistrationForm>({ addOns: [], currentStep: 'information', payment_option: 'monthly' });
   
-  const updateRegistrationForm = (updatedRegistration: RegistrationForm) => {
+  const updateRegistrationForm = (updatedRegistration: UpdateRegistrationFormType) => {
     setRegistration({
       ...registration,
       ...updatedRegistration

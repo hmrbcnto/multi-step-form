@@ -1,6 +1,6 @@
 export interface RegistrationFormContext {
   registration: RegistrationForm;
-  updateRegistrationForm?: (registration: RegistrationForm) => void;
+  updateRegistrationForm?: (registration: UpdateRegistrationFormType) => void;
 }
 export interface RegistrationForm {
   name?: string;
@@ -8,9 +8,19 @@ export interface RegistrationForm {
   phone_number?: string;
   payment_option?: 'monthly' | 'yearly';
   plan?: 'arcade' | 'advanced' | 'pro';
-  addOns?: Addon[];
+  addOns: AddonString[];
   currentStep?: string;
 };
 
+export interface UpdateRegistrationFormType {
+  name?: string;
+  email?: string;
+  phone_number?: string;
+  payment_option?: 'monthly' | 'yearly';
+  plan?: 'arcade' | 'advanced' | 'pro';
+  addOns?: AddonString[];
+  currentStep?: string;
+}
+
 export type Plan = 'arcade' | 'advanced' | 'pro';
-type Addon = 'online_service' | 'larger_storage' | 'customizable_profile';
+export type AddonString = 'online_service' | 'larger_storage' | 'customizable_profile';
