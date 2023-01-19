@@ -5,4 +5,5 @@ export interface ButtonProps {
   isDisabled?: boolean;
   text: React.ReactNode | React.ReactNode[];
   className?: string;
+  onClick: () => void;
 };

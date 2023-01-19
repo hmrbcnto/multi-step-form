@@ -6,7 +6,8 @@ const Button: React.FC<ButtonProps> = ({
   type='ghost',
   isDisabled,
   text,
-  className=''
+  className='',
+  onClick
 }) => {
   const solidClasses = type === 'primary' ? 'bg-primary-marine_blue rounded-xl' : '';
   const buttonClasses = twMerge(`
@@ -19,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
     items-center
     hover:cursor-pointer
     hover:bg-primary-strawberry_red
-    h-16
+    h-12
     border-solid
     font-bold
     px-6
@@ -32,6 +33,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={`${buttonClasses}`}
+      onClick={onClick}
     >{text}</button>
   )
 }
