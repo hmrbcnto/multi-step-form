@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import { RegistrationForm, RegistrationFormContext } from './FormContext.types';
 
-export const FormContext = React.createContext<RegistrationFormContext | null>(null);
+export const FormContext = React.createContext<RegistrationFormContext>({
+  registration: {
+    currentStep: 'plan',
+    payment_option: 'yearly'
+  }
+});
 
-const FormProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const FormProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [registration, setRegistration] = useState<RegistrationForm>({});
   
-  const updateRegistrationForm = (registration: RegistrationForm) => {
+  const updateRegistrationForm = (updatedRegistration: RegistrationForm) => {
     setRegistration({
-      ...registration
-    })
+      ...registration,
+      ...updatedRegistration
+    });
   };
 
   return (
@@ -19,4 +25,4 @@ const FormProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   )
 };
 
-export default FormProvider;
+export const useRegistrationForm = () => React.useContext(FormContext);

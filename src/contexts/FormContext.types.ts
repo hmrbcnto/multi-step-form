@@ -12,5 +12,5 @@ export interface RegistrationForm {
   currentStep?: string;
 };
 
-
+export type Plan = 'arcade' | 'advanced' | 'pro';
 type Addon = 'online_service' | 'larger_storage' | 'customizable_profile';
