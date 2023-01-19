@@ -6,6 +6,8 @@ import InformationForm from './InformationForm';
 import { useRegistrationForm } from '../../contexts/FormContext';
 import PlanForm from './PlanForm';
 import AddonForm from './AddOnForm';
+import SummaryForm from './SummaryForm';
+import ThankYou from './ThankYou';
 
 const Form: React.FC = () => {
   const { registration } = useRegistrationForm();
@@ -32,6 +34,10 @@ const Form: React.FC = () => {
         return <PlanForm />;
       case 'add-ons':
         return <AddonForm />;
+      case 'summary':
+        return <SummaryForm />;
+      case 'thank-you':
+        return <ThankYou />;
       default:
         return <InformationForm />
     }
