@@ -4,7 +4,12 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'steps-image-desktop': "url('/src/assets/images/bg-sidebar-desktop.svg')",
+        'steps-image-mobile': "url('/src/assets/images/bg-sidebar-mobile.svg')"
+      }
+    },
     colors: {
       primary: {
         marine_blue: '#02295a',
@@ -20,6 +25,10 @@ module.exports = {
         alabaster: '#fafbff',
         white: '#ffffff'
       }
+    },
+    screens: {
+      // 'mobile': '375px',
+      'desktop': '375px'
     }
   },
   plugins: [],
