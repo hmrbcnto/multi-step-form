@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from '../components/Form';
-import FormProvider from '../contexts/FormContext';
+import { FormProvider } from '../contexts/FormContext';
 
 const Plan: React.FC = () => {
   return (
