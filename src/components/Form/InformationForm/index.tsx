@@ -25,14 +25,7 @@ const InformationForm: React.FC = () => {
     });
   };
 
-  const handleSubmit = () => updateRegistrationForm ? updateRegistrationForm(information) : null;
-
-  const mehe = () => {
-    return updateRegistrationForm ? updateRegistrationForm({
-      ...registration,
-      currentStep: 'plan'
-    }) : '';
-  }
+  const handleSubmit = () => updateRegistrationForm?.({ ...information, currentStep: 'plan' })
 
   return (
     <div className="flex flex-col p-8 gap-6">
@@ -67,7 +60,7 @@ const InformationForm: React.FC = () => {
         text="Next" 
         type="primary" 
         className="self-end text-neutral-white"
-        onClick={mehe}
+        onClick={handleSubmit}
       />
     </div>
   )
