@@ -1,7 +1,7 @@
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import Step from './Step';
-import { StepsProps } from './Steps.types';
+import { StepsItem, StepsProps } from './Steps.types';
 
 const Steps: React.FC<StepsProps> = ({
   steps,
@@ -23,9 +23,11 @@ const Steps: React.FC<StepsProps> = ({
   return (
     <div className={`${baseClasses}`}>
       <div className="flex desktop:flex-col desktop:pl-6 pt-8 gap-4 justify-center desktop:justify-start">
-        {steps.map((step) => (<Step 
+        {steps.map((step: StepsItem) => (<Step 
             stepName={step.stepName} 
             stepNumber={step.stepNumber} 
+            isActive={activeStep === step.value}
+            value={step.value}
           />))}
       </div>
     </div>

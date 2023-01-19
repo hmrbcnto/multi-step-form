@@ -7,4 +7,5 @@ export interface StepsItem {
   isActive?: boolean;
   stepName: string;
   stepNumber: number;
-}
+  value: string;
+};

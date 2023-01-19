@@ -8,7 +8,7 @@ const SelectBox: React.FC<SelectBoxProps> = ({
   onClick,
   isSelected
 }) => {
-  const selectedClasses = isSelected ? 'bg-light-gray border-primary-marine_blue' : '';
+  const selectedClasses = isSelected ? 'bg-neutral-magnolia border-primary-marine_blue' : '';
   return (
     <div 
       className={`border border-solid border-neutral-light_gray flex flex-col justify-between min-h-[12rem] w-1/3 p-4 rounded-xl ${selectedClasses}`}

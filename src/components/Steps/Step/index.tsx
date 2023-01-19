@@ -7,7 +7,7 @@ const Step: React.FC<StepsItem> = ({
   stepName,
   stepNumber
 }) => {
-  const activeClasses = isActive ? 'bg-neutral-white text-primary-pastel_blue' : '';
+  const activeClasses = isActive ? 'bg-neutral-white text-primary-marine_blue' : '';
   const twClasses = twMerge(`
     flex 
     border-solid 
@@ -19,6 +19,7 @@ const Step: React.FC<StepsItem> = ({
     items-center 
     w-10 
     h-10
+    font-bold
     ${activeClasses}
   `);
 
