@@ -6,10 +6,11 @@ export interface RegistrationForm {
   name?: string;
   email?: string;
   phone_number?: string;
-  payment_option?: 'monthly' | 'yearly';
-  plan?: 'arcade' | 'advanced' | 'pro';
+  payment_option: 'monthly' | 'yearly';
+  plan?: Plan;
   addOns: AddonString[];
   currentStep?: string;
+  confirmed: boolean;
 };
 
 export interface UpdateRegistrationFormType {
@@ -17,9 +18,10 @@ export interface UpdateRegistrationFormType {
   email?: string;
   phone_number?: string;
   payment_option?: 'monthly' | 'yearly';
-  plan?: 'arcade' | 'advanced' | 'pro';
+  plan?: Plan;
   addOns?: AddonString[];
   currentStep?: string;
+  confirmed?: boolean;
 }
 
 export type Plan = 'arcade' | 'advanced' | 'pro';

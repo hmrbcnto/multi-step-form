@@ -43,7 +43,7 @@ const AddonForm: React.FC = () => {
             text={addon.text}
             subText={addon.subText}
             value={addon.value}
-            cost={registration?.payment_option === 'monthly' ? `+$${addon.monthCost}/month` : `$${addon.yearCost}/year`}
+            cost={registration?.payment_option === 'monthly' ? `+$${addon.monthlyCost}/month` : `$${addon.yearlyCost}/year`}
             onChange={() => onChange(addon.value)}
             isChecked={addOns.includes(addon.value)}
           />

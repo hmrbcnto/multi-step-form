@@ -5,12 +5,18 @@ export const FormContext = React.createContext<RegistrationFormContext>({
   registration: {
     currentStep: 'information',
     payment_option: 'monthly',
-    addOns: []
+    addOns: [],
+    confirmed: false
   }
 });
 
 export const FormProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [registration, setRegistration] = useState<RegistrationForm>({ addOns: [], currentStep: 'information', payment_option: 'monthly' });
+  const [registration, setRegistration] = useState<RegistrationForm>({ 
+    addOns: [], 
+    currentStep: 'information', 
+    payment_option: 'monthly', 
+    confirmed: false 
+  });
   
   const updateRegistrationForm = (updatedRegistration: UpdateRegistrationFormType) => {
     setRegistration({
