@@ -13,8 +13,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }) => {
   const checkedClasses = isChecked ? 'bg-primary-purplish_blue' : '';
   const baseClasses = twMerge(`
-    h-6
-    w-6
+    h-8
+    w-8
     border
     border-solid
     border-neutral-light_gray
@@ -25,8 +25,12 @@ const Checkbox: React.FC<CheckboxProps> = ({
     p-2
     ${checkedClasses}
   `);
+  const selectedBoxClasses = isChecked ? 'bg-neutral-magnolia border-primary-marine_blue' : '';
   return (
-    <div className="flex gap-4 w-full border border-solid border-neutral-light_gray p-8 px-6 rounded-lg justify-between items-center align-center">
+    <div 
+      className={`flex gap-4 w-full border border-solid border-neutral-light_gray p-6 px-6 rounded-lg justify-between items-center align-center ${selectedBoxClasses}`}
+      onClick={onChange}
+    >
       <div className={baseClasses}>
         <img src={checkmark} alt="checkmark" className="object-none" />
       </div>

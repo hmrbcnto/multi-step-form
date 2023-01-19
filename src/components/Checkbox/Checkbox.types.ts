@@ -4,5 +4,5 @@ export interface CheckboxProps {
   value: string;
   cost?: string;
   isChecked?: boolean;
-  onChange?: boolean;
+  onChange?: () => void;
 };
