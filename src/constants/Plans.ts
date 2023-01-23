@@ -8,6 +8,8 @@ interface PlanType {
   text: string;
   yearSubText: React.ReactNode | React.ReactNode[];
   monthSubText: React.ReactNode | React.ReactNode[];
+  monthlyValue: number;
+  yearlyValue: number;
   logo: string;
   value: Plan;
 };
@@ -17,6 +19,8 @@ export const PlanConstants: PlanType[] = [
     text: 'Arcade',
     monthSubText: '$9/month',
     yearSubText: '$90/year',
+    monthlyValue: 9,
+    yearlyValue: 90,
     logo: arcadeLogo,
     value: 'arcade'
   },
@@ -24,6 +28,8 @@ export const PlanConstants: PlanType[] = [
     text: 'Advanced',
     monthSubText: '$12/month',
     yearSubText: '$120/year',
+    monthlyValue: 12,
+    yearlyValue: 120,
     logo: advancedLogo,
     value: 'advanced'
   },
@@ -31,6 +37,8 @@ export const PlanConstants: PlanType[] = [
     text: 'Pro',
     monthSubText: '$15/month',
     yearSubText: '$150/year',
+    monthlyValue: 15,
+    yearlyValue: 150,
     logo: proLogo,
     value: 'pro'
   },
