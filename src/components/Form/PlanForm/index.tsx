@@ -76,6 +76,7 @@ const PlanForm: React.FC = () => {
           type="primary" 
           className="text-neutral-white"
           onClick={next}
+          isDisabled={!plan}
         />
       </div>
     </>
