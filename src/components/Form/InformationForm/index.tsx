@@ -2,6 +2,7 @@ import React, { useState, useReducer } from 'react';
 import Button from '../../Button';
 import Input from '../../Input';
 import { useRegistrationForm }  from '../../../contexts/FormContext';
+import { twMerge } from 'tailwind-merge';
 
 type InformationData = {
   name?: string;
@@ -10,6 +11,7 @@ type InformationData = {
 }
 
 const InformationForm: React.FC = () => {
+  
   const { updateRegistrationForm, registration } = useRegistrationForm();
 
   const [information, setInformation] = useState<InformationData>({
@@ -28,7 +30,7 @@ const InformationForm: React.FC = () => {
   const handleSubmit = () => updateRegistrationForm?.({ ...information, currentStep: 'plan' })
 
   return (
-    <div className="flex flex-col p-8 gap-6">
+    <>
       <div className="flex flex-col justify-start gap-2">
         <p className="text-primary-marine_blue text-3xl font-bold"> Personal info </p>
         <p className="text-neutral-cool_gray"> Please provide your name, email address, and phone number. </p>
@@ -56,13 +58,29 @@ const InformationForm: React.FC = () => {
           placeholder="e.g. +1 234 567 890"
         />
       </div>
+      {/* <div className="flex justify-end hidden desktop:relative">
+        <Button 
+          text="Next" 
+          type="primary" 
+          className="self-end text-neutral-white"
+          onClick={handleSubmit}
+        />
+      </div> */}
+      {/* <div className="h-16 block bottom-0  w-full bg-neutral-white">
+        <Button 
+          text="Next" 
+          type="primary" 
+          className="self-end text-neutral-white"
+          onClick={handleSubmit}
+        /> 
+      </div> */}
       <Button 
         text="Next" 
         type="primary" 
         className="self-end text-neutral-white"
         onClick={handleSubmit}
       />
-    </div>
+    </>
   )
 };
 

@@ -34,13 +34,13 @@ const PlanForm: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col p-8 gap-6">
+    <>
       <div className="flex flex-col justify-start self-start gap-2">
         <p className="text-primary-marine_blue text-3xl font-bold"> Select your plan </p>
         <p className="text-neutral-cool_gray"> You have the option of yearly or monthly billing </p>
       </div>
       <div className="flex gap-6 w-full">
-        <div className="flex gap-6 w-full">
+        <div className="flex flex-col desktop:flex-row desktop:gap-6 gap-2 w-full">
           { PlanConstants.map(planObject => (
             <SelectBox
               icon={planObject.logo}
@@ -78,7 +78,7 @@ const PlanForm: React.FC = () => {
           onClick={next}
         />
       </div>
-    </div>
+    </>
   )
 };
 

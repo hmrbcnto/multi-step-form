@@ -3,6 +3,7 @@ import { useRegistrationForm } from '../../../contexts/FormContext';
 import Summary from '../../Summary';
 import { AddOns } from '../../../constants/AddOns';
 import Button from '../../Button';
+import { PlanConstants } from '../../../constants/Plans';
 
 const SummaryForm: React.FC = () => {
   const { updateRegistrationForm, registration } = useRegistrationForm();
@@ -14,7 +15,10 @@ const SummaryForm: React.FC = () => {
       const addOnObject = AddOns.filter((addOnSearch) => addOnSearch.value === addOn)[0];
       totalCost = totalCost + addOnObject[`${paymentOption}Cost`];
     });
-
+    // Add cost of plan
+    const planConstant = PlanConstants.filter((plan) => plan.value === registration?.plan)[0];
+    totalCost = planConstant[`${registration?.payment_option}Value`] + totalCost;
+    
     return totalCost;
   }
 
@@ -38,7 +42,7 @@ const SummaryForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col p-8 gap-6">
+    <>
       <div className="flex flex-col justify-start gap-2">
         <p className="text-primary-marine_blue text-3xl font-bold"> Finishing up </p>
         <p className="text-neutral-cool_gray"> Double check everything looks OK before confirming. </p>
@@ -64,7 +68,7 @@ const SummaryForm: React.FC = () => {
           onClick={next}
         />
       </div>
-    </div>
+    </>
   )
 };
 

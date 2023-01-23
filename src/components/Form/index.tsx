@@ -8,15 +8,17 @@ import PlanForm from './PlanForm';
 import AddonForm from './AddOnForm';
 import SummaryForm from './SummaryForm';
 import ThankYou from './ThankYou';
+import Button from '../Button';
 
 const Form: React.FC = () => {
   const { registration } = useRegistrationForm();
   const formClasses = twMerge(`
     w-full
-    h-screen 
+    h-full
     desktop:h-[60vh]
     desktop:w-[60vw]
-    bg-neutral-white 
+    desktop:bg-neutral-white
+    bg-neutral-light_gray
     drop-shadow-lg
     desktop:p-4 
     rounded-3xl
@@ -24,7 +26,29 @@ const Form: React.FC = () => {
     flex-col
     desktop:flex-row
     desktop:gap-8
+    desktop:relative
   `); 
+
+  const responsiveClasses = twMerge(`
+    z-10
+    desktop:z-0
+    absolute
+    top-24
+    desktop:top-0
+    desktop:relative
+    desktop:mt-0
+    border border-solid border-neutral-magnolia
+    desktop:border
+    desktop:border-none
+    desktop:drop-shadow-none
+    bg-neutral-white
+    mx-8
+    flex
+    justify-center
+    rounded-xl
+    drop-shadow-md
+    min-h-[30%]
+  `);
 
   const formComponent = () => {
     switch(registration?.currentStep) {
@@ -41,7 +65,7 @@ const Form: React.FC = () => {
       default:
         return <InformationForm />
     }
-  }
+  };
 
   return(
     <div className={`${formClasses}`}>
@@ -50,10 +74,21 @@ const Form: React.FC = () => {
         activeStep={registration?.currentStep}
       />
       <div className="w-full mx-auto">
-        {
-          formComponent()
-        }
+        <div className={`flex flex-col p-8 gap-6 ${responsiveClasses} grow-0`}>
+          {
+            formComponent()
+          }
+        </div>
       </div>
+      {/* <div className="fixed bottom-0 mb-4 w-full bg-neutral-white h-[10%] flex flex-col justify-center px-4">
+        <Button 
+          text="Next" 
+          type="primary" 
+          className="text-neutral-white"
+          onClick={() => console.log('')}
+
+        /> 
+      </div> */}
     </div>
   );
 };

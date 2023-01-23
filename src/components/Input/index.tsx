@@ -25,7 +25,7 @@ const Input: React.FC<InputProps> = ({
     border-neutral-cool_gray
     border-solid
     border
-    py-4
+    py-2
     px-3
     flex
     justify-content
@@ -34,7 +34,7 @@ const Input: React.FC<InputProps> = ({
     flex-col
     items-center
     w-full
-    rounded-xl
+    rounded-lg
     flex-none
     self-stretch
     grow-0
