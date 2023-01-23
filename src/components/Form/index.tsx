@@ -48,6 +48,7 @@ const Form: React.FC = () => {
     rounded-xl
     drop-shadow-md
     min-h-[30%]
+    desktop:h-full
   `);
 
   const formComponent = () => {

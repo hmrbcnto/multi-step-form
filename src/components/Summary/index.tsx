@@ -30,10 +30,11 @@ const Summary: React.FC<SummaryProps> = ({
             // Get corresponding data from addon constants
             const addOnObject = AddOns.filter((addOn) => addOn.value === addOnString)[0];
             let cost;
-            let period;
+            const period = capitalize(paymentOption.substring(0, paymentOption.length-2));
             if (paymentOption === 'yearly') {
               cost = addOnObject.yearlyCost;
-              period = capitalize(paymentOption.substring(0, paymentOption.length-2));
+            } else {
+              cost = addOnObject.monthlyCost;
             }
             return (
               <div className="flex justify-between">
