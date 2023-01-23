@@ -30,7 +30,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   const selectedBoxClasses = isChecked ? 'bg-neutral-magnolia border-primary-marine_blue' : '';
   return (
     <div 
-      className={`flex gap-1 desktop:gap-4 w-full border border-solid border-neutral-light_gray p-2 desktop:p-6 rounded-lg justify-between items-center align-center ${selectedBoxClasses} grow-0`}
+      className={`flex gap-1 desktop:gap-4 w-full border border-solid border-neutral-light_gray p-2 desktop:p-6 rounded-lg justify-between items-center align-center hover:border-primary-marine_blue hover:cursor-pointer ${selectedBoxClasses} grow-0`}
       onClick={onChange}
     >
       <div className={baseClasses}>

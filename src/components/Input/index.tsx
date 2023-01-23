@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = ({
     onChange(value);
   };
 
-  const errorClasses = status === 'error' ? 'border-red-600 bg-red-600 border-solid' : '';
+  const errorClasses = status === 'error' ? 'border-red-600 bg-red-100 border-solid' : '';
   const baseClasses = twMerge(`
     focus:border-primary-marine_blue
     focus:border-solid
@@ -43,7 +43,10 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <div className="flex flex-col items-start gap-2">
-      { title ? <span className="font-extrabold text-primary-marine_blue"> {title} </span> : <></>}
+      <div className="flex justify-between w-full">
+        { title ? <span className="font-extrabold text-primary-marine_blue"> {title} </span> : <></>}
+        { status === 'error' ? <span className="font-bold text-primary-marine_blue text-red-500 self-end"> This field is required. </span> : <></>}
+      </div>
       <InputMask
         className={`${baseClasses}`}
         mask={mask}

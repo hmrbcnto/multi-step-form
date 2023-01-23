@@ -10,6 +10,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick
 }) => {
   const solidClasses = type === 'primary' ? 'bg-primary-marine_blue rounded-xl' : '';
+  const disabledClasses = isDisabled ? 'hover:bg-neutral-cool_gray bg-neutral-cool_gray hover:pointer-events-none hover:cursor-not-allowed' : '';
   const buttonClasses = twMerge(`
     gap-2
     flex
@@ -28,7 +29,9 @@ const Button: React.FC<ButtonProps> = ({
     shrink-0
     w-[8rem]
     ${solidClasses}
+    ${disabledClasses}
     ${className}
+
   `)
   return (
     <button
