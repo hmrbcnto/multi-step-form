@@ -2,7 +2,6 @@ import React, { useState, useReducer } from 'react';
 import Button from '../../Button';
 import Input from '../../Input';
 import { useRegistrationForm }  from '../../../contexts/FormContext';
-import { twMerge } from 'tailwind-merge';
 
 type InformationData = {
   name?: string;
@@ -13,6 +12,7 @@ type InformationData = {
 const InformationForm: React.FC = () => {
   
   const { updateRegistrationForm, registration } = useRegistrationForm();
+  const [isError, setIsError] = useState<boolean>(false);
 
   const [information, setInformation] = useState<InformationData>({
     name: registration?.name,
@@ -27,7 +27,12 @@ const InformationForm: React.FC = () => {
     });
   };
 
-  const handleSubmit = () => updateRegistrationForm?.({ ...information, currentStep: 'plan' })
+  const handleSubmit = () => {
+    if (!information?.name || !information?.email || !information.phone_number) {
+      return setIsError(true);
+    }
+    updateRegistrationForm?.({ ...information, currentStep: 'plan' })
+  }
 
   return (
     <>
@@ -42,6 +47,7 @@ const InformationForm: React.FC = () => {
           onChange={value => modifyInformation('name', value)}
           title="Name"
           placeholder="e.g. Stephen King"
+          status={isError && !information.name ? 'error' : undefined}
         />
         <Input
           id="email"
@@ -49,6 +55,7 @@ const InformationForm: React.FC = () => {
           onChange={value => modifyInformation('email', value)}
           title="Email Address"
           placeholder="e.g. stephenking@lorem.com"
+          status={isError && !information.email ? 'error' : undefined}
         />
         <Input
           id="phone_number"
@@ -56,24 +63,9 @@ const InformationForm: React.FC = () => {
           onChange={value => modifyInformation('phone_number', value)}
           title="Phone Number"
           placeholder="e.g. +1 234 567 890"
+          status={isError && !information.phone_number ? 'error' : undefined}
         />
       </div>
-      {/* <div className="flex justify-end hidden desktop:relative">
-        <Button 
-          text="Next" 
-          type="primary" 
-          className="self-end text-neutral-white"
-          onClick={handleSubmit}
-        />
-      </div> */}
-      {/* <div className="h-16 block bottom-0  w-full bg-neutral-white">
-        <Button 
-          text="Next" 
-          type="primary" 
-          className="self-end text-neutral-white"
-          onClick={handleSubmit}
-        /> 
-      </div> */}
       <Button 
         text="Next" 
         type="primary" 
