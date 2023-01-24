@@ -3,7 +3,7 @@ import Plan from './pages/Plan';
 
 const Router: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Plan />}/>
       </Routes>
