@@ -81,15 +81,6 @@ const Form: React.FC = () => {
           }
         </div>
       </div>
-      {/* <div className="fixed bottom-0 mb-4 w-full bg-neutral-white h-[10%] flex flex-col justify-center px-4">
-        <Button 
-          text="Next" 
-          type="primary" 
-          className="text-neutral-white"
-          onClick={() => console.log('')}
-
-        /> 
-      </div> */}
     </div>
   );
 };
