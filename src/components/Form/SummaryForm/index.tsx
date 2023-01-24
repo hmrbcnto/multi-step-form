@@ -3,7 +3,7 @@ import { useRegistrationForm } from '../../../contexts/FormContext';
 import Summary from '../../Summary';
 import { AddOns } from '../../../constants/AddOns';
 import Button from '../../Button';
-import { PlanConstants } from '../../../constants/Plans';
+import { Plans } from '../../../constants/Plans';
 
 const SummaryForm: React.FC = () => {
   const { updateRegistrationForm, registration } = useRegistrationForm();
@@ -16,7 +16,7 @@ const SummaryForm: React.FC = () => {
       totalCost = totalCost + addOnObject[`${paymentOption}Cost`];
     });
     // Add cost of plan
-    const planConstant = PlanConstants.filter((plan) => plan.value === registration?.plan)[0];
+    const planConstant = Plans.filter((plan) => plan.value === registration?.plan)[0];
     totalCost = planConstant[`${registration?.payment_option}Value`] + totalCost;
     
     return totalCost;

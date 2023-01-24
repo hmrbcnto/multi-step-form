@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useRegistrationForm } from '../../../contexts/FormContext';
 import Switch from 'react-switch';
 import SelectBox from '../../SelectBox';
-import { PlanConstants } from '../../../constants/Plans';
+import { Plans } from '../../../constants/Plans';
 import Button from '../../Button';
 import { Plan } from '../../../contexts/FormContext.types';
 
@@ -41,7 +41,7 @@ const PlanForm: React.FC = () => {
       </div>
       <div className="flex gap-6 w-full">
         <div className="flex flex-col desktop:flex-row desktop:gap-6 gap-2 w-full">
-          { PlanConstants.map(planObject => (
+          { Plans.map(planObject => (
             <SelectBox
               icon={planObject.logo}
               text={planObject.text}

@@ -4,7 +4,7 @@ import proLogo from '../assets/images/icon-pro.svg';
 import React from 'react';
 import { Plan } from '../contexts/FormContext.types';
 
-interface PlanType {
+export interface PlanType {
   text: string;
   yearSubText: React.ReactNode | React.ReactNode[];
   monthSubText: React.ReactNode | React.ReactNode[];
@@ -14,7 +14,7 @@ interface PlanType {
   value: Plan;
 };
 
-export const PlanConstants: PlanType[] = [
+export const Plans: PlanType[] = [
   {
     text: 'Arcade',
     monthSubText: '$9/month',

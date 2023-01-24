@@ -8,7 +8,6 @@ import PlanForm from './PlanForm';
 import AddonForm from './AddOnForm';
 import SummaryForm from './SummaryForm';
 import ThankYou from './ThankYou';
-import Button from '../Button';
 
 const Form: React.FC = () => {
   const { registration } = useRegistrationForm();
@@ -42,7 +41,8 @@ const Form: React.FC = () => {
     desktop:border-none
     desktop:drop-shadow-none
     bg-neutral-white
-    mx-8
+    mx-6
+    desktop:mx-2
     flex
     justify-center
     rounded-xl
@@ -75,7 +75,7 @@ const Form: React.FC = () => {
         activeStep={registration?.currentStep}
       />
       <div className="w-full mx-auto">
-        <div className={`flex flex-col p-8 gap-6 ${responsiveClasses} grow-0`}>
+        <div className={`flex flex-col p-8 gap-4 ${responsiveClasses} grow-0`}>
           {
             formComponent()
           }

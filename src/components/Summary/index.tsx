@@ -1,5 +1,7 @@
 import React from 'react';
 import { AddOns } from '../../constants/AddOns';
+import { Plans, PlanType } from '../../constants/Plans';
+import { Plan } from '../../contexts/FormContext.types';
 import { SummaryProps } from './Summary.types';
 
 const Summary: React.FC<SummaryProps> = ({
@@ -10,7 +12,8 @@ const Summary: React.FC<SummaryProps> = ({
   clickChange
 }) => {
   const capitalize = (value: string | undefined) => value ? value[0].toUpperCase() + value.substring(1) : '';
-
+  const matchingPlan = Plans.filter((planObject: PlanType) => plan === planObject?.value)[0];
+  // const paymentPerPeriod = Plans.find((planObject: Plan) => planObject.value === plan.value);
   return (
     <div className="w-full flex flex-col">
       <div className="flex flex-col bg-neutral-alabaster p-6 rounded-xl">
@@ -22,7 +25,7 @@ const Summary: React.FC<SummaryProps> = ({
               onClick={clickChange}
             >Change</p>
           </div>
-          <p className="text-sm desktop:text-xl font-extrabold text-primary-marine_blue">$9/Month</p>
+          <p className="text-sm desktop:text-xl font-extrabold text-primary-marine_blue">${matchingPlan[`${paymentOption}Value`]}/{capitalize(paymentOption.substring(0, paymentOption.length-2))}</p>
         </div>
         <br />
         <div className="flex flex-col">
