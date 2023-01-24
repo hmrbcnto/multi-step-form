@@ -43,7 +43,7 @@ const SummaryForm: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-start gap-2">
+      <div className="flex flex-col justify-start">
         <p className="text-primary-marine_blue text-3xl font-bold"> Finishing up </p>
         <p className="text-neutral-cool_gray"> Double check everything looks OK before confirming. </p>
       </div>

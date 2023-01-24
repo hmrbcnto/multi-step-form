@@ -40,7 +40,7 @@ const InformationForm: React.FC = () => {
         <p className="text-primary-marine_blue text-3xl font-bold"> Personal info </p>
         <p className="text-neutral-cool_gray"> Please provide your name, email address, and phone number. </p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         <Input
           id="name"
           value={information.name}

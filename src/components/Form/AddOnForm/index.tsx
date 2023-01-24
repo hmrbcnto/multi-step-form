@@ -33,7 +33,7 @@ const AddonForm: React.FC = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-start gap-2">
+      <div className="flex flex-col justify-start">
         <p className="text-primary-marine_blue text-3xl font-bold"> Pick add-ons </p>
         <p className="text-neutral-cool_gray"> Add-ons help enhance your gaming experience </p>
       </div>
