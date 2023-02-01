@@ -45,6 +45,7 @@ const Form: React.FC = () => {
     desktop:mx-2
     flex
     justify-center
+    align-center
     rounded-xl
     drop-shadow-md
     min-h-[30%]
@@ -74,7 +75,7 @@ const Form: React.FC = () => {
         steps={StepConstants}
         activeStep={registration?.currentStep}
       />
-      <div className="w-full mx-auto">
+      <div className="w-full mx-auto flex justify-center desktop:block">
         <div className={`flex flex-col p-8 gap-4 ${responsiveClasses} grow-0`}>
           {
             formComponent()

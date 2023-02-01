@@ -22,7 +22,7 @@ const Steps: React.FC<StepsProps> = ({
   `);
   return (
     <div className={`${baseClasses}`}>
-      <div className="flex desktop:flex-col desktop:pl-6 pt-8 gap-4 justify-center desktop:justify-start">
+      <div className="flex desktop:flex-col desktop:pl-2 pt-8 gap-4 justify-center desktop:justify-start">
         {steps.map((step: StepsItem) => (<Step 
             stepName={step.stepName} 
             stepNumber={step.stepNumber} 
